@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-namespace Graph {
+namespace Graphs {
 class Node {
 
   private:
@@ -33,6 +33,6 @@ class Node {
     std::unordered_set<std::string>& getSetRef();
 };
 
-}; // namespace Graph
+}; // namespace Graphs
 
 #endif // NODE_H

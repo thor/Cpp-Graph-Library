@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    //Declare a Graph object, populate it.	
+    //Declare a Graphs object, populate it.	
     Graph G;
     G.addNode("A"); 
     G.addNode("B");

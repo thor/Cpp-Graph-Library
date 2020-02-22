@@ -8,7 +8,8 @@
 #include <tuple>
 #include <utility>
 #include <vector>
-namespace Graph {
+
+namespace Graphs {
 class Graph {
 
   private:
@@ -18,9 +19,9 @@ class Graph {
   public:
     // Constructors & Destructor
     Graph(); // Graphs are directed by default
-    Graph(bool directed);
+    explicit Graph(bool directed);
     Graph(const Graph &other); // Copy-Constructor, uses getEdges function
-    Graph(std::string inputFileName); // Constructs Graph from .txt file
+    explicit Graph(const std::string& inputFileName); // Constructs Graph from .txt file
     ~Graph();
 
     // Trivial Functions
@@ -86,8 +87,8 @@ class Graph {
                  targetNode); // Returns the shortest path from source to target
     std::unordered_map<std::string, double>
     Dijktras(std::string sourceNode); // Returns a map where keys are nodes
-                                      // reachable from source and values are the
-                                      // shortest distance from source
+                                      // reachable from source and values are
+                                      // the shortest distance from source
 
     // BellmanFord: Returns a 3-tuple containing the Dist and Prev maps, as well
     // as a boolean for the existence of a negative cycle
@@ -123,5 +124,5 @@ class Graph {
     bool saveGraph(std::string outputFileName);
 };
 
-} // namespace Graph
+} // namespace Graphs
 #endif // GRAPH_H

@@ -4,11 +4,13 @@
 #include "Node.h"
 #include <utility>
 
+namespace Graphs {
+
 Node::Node(double data, std::string name) {
     this->data = data;
     this->name = name;
     // Dynamically allocate neighborMap
-    std::unordered_map<std::string, std::multiset<double>>* mapPointer =
+    auto *mapPointer =
         new std::unordered_map<std::string, std::multiset<double>>();
     neighborMap = mapPointer;
 }
@@ -30,8 +32,10 @@ void Node::addNeighbor(std::string neighborName, double weight) {
 
 double Node::getData() { return data; }
 
-std::unordered_map<std::string, std::multiset<double>>* Node::getMapPtr() {
+std::unordered_map<std::string, std::multiset<double>> *Node::getMapPtr() {
     return neighborMap;
 }
 
-std::unordered_set<std::string>& Node::getSetRef() { return neighborOfSet; }
+std::unordered_set<std::string> &Node::getSetRef() { return neighborOfSet; }
+
+} // namespace Graphs
